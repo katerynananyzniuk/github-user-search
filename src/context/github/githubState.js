@@ -1,8 +1,6 @@
 import { useReducer } from "react"
 import axios from 'axios'
-import { CLEAR_USERS, SEARCH_USERS, SET_LOADING } from "../types"
-import { GET_USER } from "../types"
-import { GET_REPOS } from "../types"
+import { CLEAR_USERS, SEARCH_USERS, SET_LOADING, GET_USER, GET_REPOS } from "../types"
 import { GithubContext } from "./githubContext"
 import { githubReducer } from "./githubReduser"
 
@@ -39,7 +37,7 @@ export const GithubState = ({children}) => {
     setLoading()
 
     const response = await axios.get(
-      withCreds(`https://api.github.com/users/${name}?`)
+      `https://api.github.com/users/${name}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     )
 
     dispatch({
@@ -52,7 +50,7 @@ export const GithubState = ({children}) => {
     setLoading()
 
     const response = await axios.get(
-      withCreds(`https://api.github.com/users/${name}/repos?per_page=5&`)
+      withCreds(`https://api.github.com/users/${name}/repos?per_page=6&`)
     )
 
     dispatch({

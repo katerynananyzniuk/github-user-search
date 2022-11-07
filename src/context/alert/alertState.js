@@ -1,4 +1,4 @@
-import {useReducer} from 'react'
+import { useReducer } from 'react'
 import { AlertContext } from "./alertContext"
 import { alertReducer } from './alertReducer'
 import { HIDE_ALERT, SHOW_ALERT } from '../types'
