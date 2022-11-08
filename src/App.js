@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HashRouter, Routes, Route} from 'react-router-dom'
 import {Navbar} from "./components/Navbar";
 import {Home} from './pages/Home'
 import {About} from './pages/About'
@@ -11,7 +11,7 @@ function App() {
   return (
     <GithubState>
       <AlertState>
-        <BrowserRouter>
+        <HashRouter>
           <Navbar />
           <div className="container pt-4">
             <Alert alert={{text: 'Test alert'}}/>
@@ -22,7 +22,7 @@ function App() {
             </Routes>
             
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </AlertState>
     </GithubState>
   );
