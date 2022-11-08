@@ -5,7 +5,12 @@ export const Card = ({user}) => (
     <img src={user.avatar_url} alt={user.login} className='card-img-top'/>
     <div className="card-body">
       <h5 className="card-title">{user.login}</h5>
-      <Link to={'/profile/' + user.login} className="btn btn-success">Open</Link>
+      <div className="d-flex justify-content-end">
+        <Link 
+          to={'/profile/' + user.login} 
+          className="btn btn-success px-5"
+        >Open</Link>
+      </div>
     </div>
   </div>
 )

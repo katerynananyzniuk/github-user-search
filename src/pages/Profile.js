@@ -1,6 +1,7 @@
 import {Link, useParams} from 'react-router-dom'
 import {useContext, useEffect} from 'react'
 import { GithubContext } from '../context/github/githubContext'
+import { Repos } from '../components/Repos';
 
 export const Profile = () => {
   let { urlName } = useParams();
@@ -30,7 +31,7 @@ export const Profile = () => {
     <>
       <Link to="/" className="btn btn-secondary mb-4">Come back</Link>
       
-      <div className="card">
+      <div className="card mb-4">
         <div className="card-body">
           <div className="row">
 
@@ -76,11 +77,11 @@ export const Profile = () => {
                 <li>Gists: <span className='text-success'>{public_gists}</span></li>
               </ul>
             </div>
-            
           </div>
         </div>
       </div>
-      {repos.join('')}
+            
+      <Repos repos={repos}/>
     </>
   )
 }

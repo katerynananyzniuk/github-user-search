@@ -13,7 +13,7 @@ export const Home = () => {
       <div className="row">
 
         {loading
-          ? <p style={{textAlign: "center"}}>Loading...</p>
+          ? <p className="d-flex justify-content-center mt-5">Loading...</p>
           : users.map(user => (
               <div className="col-sm-4 mb-4" key={user.id}>
                 <Card user={user}/>

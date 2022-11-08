@@ -24,14 +24,26 @@ export const Search = () => {
 
   return (
     <div className="form-group">
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Enter user name"
-        onKeyPress={onSubmit}
-        value={value}
-        onChange={event => setValue(event.target.value)}
-      />
+      <div className="input-group">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Enter user name"
+          onKeyPress={onSubmit}
+          value={value}
+          onChange={event => setValue(event.target.value)}
+        />
+        <button 
+          className="btn btn-outline-secondary" 
+          type="button"
+          onClick={
+            () => {
+              setValue('')
+              github.clearUsers()
+            }
+          }
+        >X</button>
+      </div>
     </div>
   )
 }
